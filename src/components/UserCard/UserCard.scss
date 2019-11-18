@@ -1,0 +1,21 @@
+@import "../../sass/mixins";
+
+.UserCard {
+  @include card;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 2rem;
+
+  &__name {
+    margin-left: 2rem;
+  }
+
+  &__icon-add {
+    height: 2rem;
+  }
+
+  &:hover {
+    box-shadow: 1px 1px 1px gray;
+  }
+}

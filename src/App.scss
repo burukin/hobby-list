@@ -1,0 +1,87 @@
+@import "sass/typography";
+@import "sass/reset";
+@import "sass/common";
+@import "sass/mixins";
+
+.header {
+  font-family: "Source Serif Pro", serif;
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+  background-color: #09d3ac;
+  padding: 3vh 0;
+}
+
+.App {
+  font-family: "Source Serif Pro", serif;
+
+  &__body {
+    width: 100%;
+    padding-top: 3rem;
+
+    &:after {
+      @include clearFix;
+    }
+  }
+
+  &__user-column,
+  &__hobby-column {
+    @include column;
+  }
+
+  &__user-column {
+    padding-top: 7rem;
+  }
+
+  &__hobby-list {
+    max-height: 70vh;
+    overflow-y: scroll;
+  }
+
+  &__form {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__input {
+    @include input;
+    margin-right: 0.5rem;
+  }
+
+  &__selection {
+    font-size: 2rem;
+    margin-top: 5rem;
+  }
+}
+
+.btn {
+  @include button;
+
+  &--create {
+    display: block;
+    float: right;
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+  }
+
+  &:hover {
+    background-color: #1678c2;
+  }
+}
+
+.Autocomplete {
+  position: absolute;
+  margin-top: 4rem;
+  width: 20rem;
+  background-color: white;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  border-radius: 0.3rem;
+  z-index: 1;
+  cursor: pointer;
+
+  &__item {
+    padding: 1.1rem;
+  }
+}

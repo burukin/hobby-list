@@ -1,0 +1,55 @@
+@mixin column {
+  width: 50%;
+  float: left;
+  font-size: 1.6rem;
+  padding: 2rem;
+}
+
+@mixin clearFix {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@mixin card {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  box-shadow: 3px 3px 3px gray;
+}
+
+@mixin button {
+  cursor: pointer;
+  display: inline-block;
+  min-height: 1rem;
+  outline: 0;
+  border: none;
+  vertical-align: baseline;
+  background: #2185d0 none;
+  margin: 0 0.25rem 0 0;
+  padding: 1.5rem 2rem 1.5rem;
+  text-transform: none;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1rem;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.3rem;
+}
+
+@mixin input {
+  margin: 0;
+  max-width: 20rem;
+  -webkit-box-flex: 1;
+  flex: 1 0 auto;
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  text-align: left;
+  line-height: 1.2rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  border-radius: 0.3rem;
+}

@@ -1,0 +1,22 @@
+@import "../../sass/mixins";
+
+.Hobby {
+  @include card;
+  position: relative;
+
+  &__name {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    margin-bottom: 1rem;
+  }
+
+  &__icon-minus {
+    height: 2rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}

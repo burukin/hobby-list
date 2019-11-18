@@ -1,0 +1,8 @@
+@import "../../sass/mixins";
+
+.Hobby-form {
+  &__input {
+    @include input;
+    background-color: red;
+  }
+}
