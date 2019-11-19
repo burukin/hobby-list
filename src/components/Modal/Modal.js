@@ -11,7 +11,7 @@ const Modal = ({ handleClose, show, children }) => {
       <section className='Modal__main'>
         {children}
         <button onClick={handleClose} className='btn btn--close'>
-          Close
+          &#9932;
         </button>
       </section>
     </div>

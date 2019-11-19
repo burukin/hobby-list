@@ -1,7 +1,7 @@
 import {
   INITIATE_GET_USERS,
-  INITIATE_SELECT_USER,
-  INITIATE_UPDATE_USER
+  INITIATE_UPDATE_USER,
+  SELECT_USER
 } from "./ActionTypes";
 
 export const getUsers = () => dispatch => {
@@ -14,12 +14,10 @@ export const getUsersSuccess = (type, payload) => ({ type, payload });
 
 export const selectUser = user => dispatch => {
   dispatch({
-    type: INITIATE_SELECT_USER,
-    user
+    type: SELECT_USER,
+    payload: user
   });
 };
-
-export const selectUserSuccess = (type, payload) => ({ type, payload });
 
 export const updateUser = userData => dispatch => {
   dispatch({

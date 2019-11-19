@@ -1,5 +1,6 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
+import "./CreateHobbyForm.scss";
 
 const validate = values => {
   const errors = {};
@@ -20,14 +21,14 @@ const validate = values => {
   return errors;
 };
 
-const renderField = ({
+const renderTextInput = ({
   input,
   label,
   type,
   meta: { touched, error, warning }
 }) => (
   <div className='Hobby-form__row'>
-    <label className="Hobby-form__label">{label}</label>
+    <label className='Hobby-form__label'>{label}</label>
     <div>
       <input
         {...input}
@@ -36,8 +37,30 @@ const renderField = ({
         className='Hobby-form__input'
       />
       {touched &&
-        ((error && <span className="Hobby-form__error">{error}</span>) ||
-          (warning && <span className="Hobby-form__warning">{warning}</span>))}
+        ((error && <span className='Hobby-form__error'>{error}</span>) ||
+          (warning && <span className='Hobby-form__warning'>{warning}</span>))}
+    </div>
+  </div>
+);
+
+const renderTextAreatInput = ({
+  input,
+  label,
+  meta: { touched, error, warning }
+}) => (
+  <div className='Hobby-form__row'>
+    <label className='Hobby-form__label'>{label}</label>
+    <div>
+      <textarea
+        {...input}
+        placeholder={label}
+        className='Hobby-form__text-area'
+        rows='4'
+        cols='50'
+      />
+      {touched &&
+        ((error && <span className='Hobby-form__error'>{error}</span>) ||
+          (warning && <span className='Hobby-form__warning'>{warning}</span>))}
     </div>
   </div>
 );
@@ -49,16 +72,15 @@ const CreateHobbyForm = props => {
       <Field
         name='hobbyName'
         type='text'
-        component={renderField}
+        component={renderTextInput}
         label='HobbyName'
       />
       <Field
         name='description'
-        type='textarea'
-        component={renderField}
+        component={renderTextAreatInput}
         label='Description'
       />
-      <div>
+      <div className='Hobby-form__button'>
         <button type='submit' disabled={submitting} className='btn'>
           Submit
         </button>

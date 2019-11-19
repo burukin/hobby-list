@@ -17,8 +17,8 @@ import CreateHobbyForm from "./components/CreateHobbyForm/CreateHobbyForm";
 import "./App.scss";
 
 const App = ({
-  loadingUsers,
-  loadingHobbies,
+  isUserLoading,
+  isHobbyLoading,
   users,
   userHobbies,
   getUsers,
@@ -34,7 +34,7 @@ const App = ({
   useEffect(() => {
     getUsers();
     getHobbiesNames();
-  }, []);
+  }, [getHobbiesNames, getUsers]);
 
   const [modal, setShowModal] = useState(false);
 
@@ -52,7 +52,7 @@ const App = ({
   };
 
   let renderUsers = null;
-  if (loadingUsers) {
+  if (isUserLoading) {
     renderUsers = <Loader />;
   } else {
     renderUsers =
@@ -75,7 +75,7 @@ const App = ({
   };
 
   let renderHobbies = null;
-  if (loadingHobbies) {
+  if (isHobbyLoading) {
     renderHobbies = <Loader />;
   } else if (!isEmpty(selectedUser)) {
     renderHobbies = !isEmpty(userHobbies) ? (
@@ -127,6 +127,7 @@ const App = ({
         <div className='row'>
           <div className='App__user-column'>{renderUsers}</div>
           <div className='App__hobby-column'>
+            <div className='App__hobby-list'>{renderHobbies}</div>
             {!isEmpty(selectedUser) ? (
               <AddHobbyForm
                 hobbiesNames={hobbiesNames}
@@ -137,7 +138,6 @@ const App = ({
             ) : (
               <h2 className='App__selection'>Please, select a user!</h2>
             )}
-            <div className='App__hobby-list'>{renderHobbies}</div>
           </div>
         </div>
       </section>
@@ -146,8 +146,8 @@ const App = ({
 };
 
 const mapStateToProps = state => ({
-  loadingUsers: state.users.loading,
-  loadingHobbies: state.hobbies.loading,
+  isUserLoading: state.users.loading,
+  isHobbyLoading: state.hobbies.loading,
   users: state.users.users,
   selectedUser: state.users.selectedUser,
   userHobbies: state.hobbies.hobbies,
@@ -156,8 +156,8 @@ const mapStateToProps = state => ({
 });
 
 App.propTypes = {
-  loadingUsers: PropTypes.bool.isRequired,
-  loadingHobbies: PropTypes.bool,
+  isUserLoading: PropTypes.bool.isRequired,
+  isHobbyLoading: PropTypes.bool,
   users: PropTypes.array.isRequired,
   userHobbies: PropTypes.array,
   getUsers: PropTypes.func.isRequired,

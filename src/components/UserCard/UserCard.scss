@@ -7,6 +7,10 @@
   align-items: center;
   font-size: 2rem;
 
+  &__avatar > img {
+    height: 6rem;
+  }
+
   &__name {
     margin-left: 2rem;
   }

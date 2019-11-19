@@ -1,3 +1,4 @@
+import { reset } from "redux-form";
 import {
   INITIATE_GET_USER_HOBBIES,
   INITIATE_CREATE_HOBBY,
@@ -33,4 +34,6 @@ export const createHobbySuccess = (type, payload) => dispatch => {
   dispatch({
     type: INITIATE_GET_HOBBIES_NAMES
   });
+  dispatch(reset("CreateHobbyForm"));
+  alert("New hobby created");
 };

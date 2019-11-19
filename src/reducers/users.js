@@ -2,7 +2,7 @@ import { GET_USERS, SELECT_USER, UPDATE_USER } from "../actions/ActionTypes";
 
 const INITIAL_STATE = {
   users: [],
-  selectedUser: {},
+  selectedUser: null,
   loading: true
 };
 

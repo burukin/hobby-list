@@ -8,7 +8,10 @@ function HobbyCard({ hobby, handleRemoveHobby }) {
     <div className='Hobby'>
       <h2 className='Hobby__name'>{hobby.name}</h2>
       <p className='Hobby__description'>{hobby.description}</p>
-      <Moment format='DD/MM/YYYY'>{hobby.creationDate}</Moment>
+      <div className="Hobby__date">
+        <Moment format='DD/MM/YYYY'>{hobby.creationDate}</Moment>
+      </div>
+      
       <img
         src='/images/icons/minus.svg'
         alt='Remove'

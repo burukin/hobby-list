@@ -1,5 +1,6 @@
+@import "/variables";
+
 @mixin column {
-  width: 50%;
   float: left;
   font-size: 1.6rem;
   padding: 2rem;
@@ -12,37 +13,39 @@
 }
 
 @mixin card {
-  border: 1px solid gray;
+  font-family:  "Source Sans Pro", sans-serif;
   border-radius: 5px;
   padding: 1rem;
   margin-bottom: 1rem;
   cursor: pointer;
-  box-shadow: 3px 3px 3px gray;
+  box-shadow: 1px 1px 4px $color-gray;
+  background-color: $color-white;
 }
 
 @mixin button {
-  cursor: pointer;
   display: inline-block;
   min-height: 1rem;
   outline: 0;
   border: none;
   vertical-align: baseline;
-  background: #2185d0 none;
+  background: $button-hover-background none;
   margin: 0 0.25rem 0 0;
   padding: 1.5rem 2rem 1.5rem;
   text-transform: none;
-  color: #fff;
-  font-weight: 700;
+  color:$color-white;
+  font-weight: 600;
   line-height: 1rem;
   font-style: normal;
+  font-size: 1.6rem;
   text-align: center;
   text-decoration: none;
   border-radius: 0.3rem;
+  cursor: pointer;
 }
 
 @mixin input {
   margin: 0;
-  max-width: 20rem;
+  max-width: 30rem;
   -webkit-box-flex: 1;
   flex: 1 0 auto;
   outline: 0;

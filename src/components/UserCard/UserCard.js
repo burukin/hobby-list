@@ -9,7 +9,7 @@ const UserCard = ({ user, userClickhandler }) => {
       onClick={() => userClickhandler(user, user.hobbiesIds)}
     >
       <div className='UserCard__avatar'>
-        <img src='/images/icons/profile-user.svg' alt='avatar' />
+        <img src='/images/photo_2019-11-19_12-09-27.jpg' alt='avatar' />
       </div>
       <div className='UserCard__name'>{user.name}</div>
     </div>

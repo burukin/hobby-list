@@ -1,8 +1,7 @@
 import { put } from "redux-saga/effects";
-import { GET_USERS, SELECT_USER, UPDATE_USER } from "../actions/ActionTypes";
+import { GET_USERS, UPDATE_USER } from "../actions/ActionTypes";
 import {
   getUsersSuccess,
-  selectUserSuccess,
   updateUserSuccess
 } from "../actions/users";
 import Api from "../apis/index";
@@ -14,10 +13,6 @@ export function* getUsersSaga(action) {
   } catch (e) {
     yield console.error(e.message);
   }
-}
-
-export function* selectUserSaga(action) {
-  yield put(selectUserSuccess(SELECT_USER, action.user));
 }
 
 export function* updateUserSaga(action) {
